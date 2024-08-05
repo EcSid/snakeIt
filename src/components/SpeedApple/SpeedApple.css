@@ -1,0 +1,13 @@
+.speedApple {
+	position: absolute;
+	background-color: green;
+	border-radius: 50%;
+
+	box-shadow: 0 0 5px green, 0 0 5px green, 0 0 7px green;
+	width: 1.2vw;
+	height: 3.1%;
+}
+
+.displayNone {
+	display: none;
+}

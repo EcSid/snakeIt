@@ -1,0 +1,22 @@
+.header {
+	height: 8.5vh;
+	width: 100vw;
+	background-color: rgb(23, 19, 19);
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.homeIcon {
+	height: 4vh;
+	display: block;
+}
+
+.homeIcon {
+	cursor: pointer;
+}
+
+.countOfAppleSnake {
+	color: rgb(230, 224, 224);
+}

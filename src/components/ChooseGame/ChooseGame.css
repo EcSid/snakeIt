@@ -1,0 +1,65 @@
+* {
+	text-decoration: none;
+}
+
+p {
+	position: absolute;
+	font-size: 28px;
+	color: rgb(230, 224, 224);
+}
+
+.chooseGameText {
+	position: absolute;
+	left: 50%;
+	top: 15%;
+	transform: translate(-50%);
+}
+
+.twoPlayerMode,
+.onePlayerMode {
+	font-size: 28px;
+	color: rgb(230, 224, 224);
+	width: 20vw;
+	height: 37.5vh;
+	border: 1px solid rgb(230, 224, 224);
+	border-radius: 18px;
+	text-align: center;
+	padding-top: 33%;
+	box-shadow: 0 0 5px rgb(230, 224, 224), 0 0 10px rgb(230, 224, 224);
+	position: relative;
+}
+
+.parentOfModes {
+	display: flex;
+	justify-content: space-around;
+	width: 45%;
+	left: 50%;
+	transform: translate(-50%);
+	height: 200px;
+	position: absolute;
+	top: 30%;
+}
+
+.countOfPlayers {
+	left: 50%;
+	top: 5%;
+	transform: translate(-50%);
+}
+
+.image {
+	height: 80px;
+}
+
+.starToGithub {
+	position: absolute;
+	display: block;
+	color: rgb(230, 224, 224);
+	bottom: 4.5%;
+	left: 50%;
+	transform: translate(-50%);
+}
+
+.starToGithub:hover {
+	text-decoration: underline;
+	text-underline-position: under;
+}

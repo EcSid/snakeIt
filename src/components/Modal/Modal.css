@@ -1,0 +1,123 @@
+.dialogWhenOne {
+	display: block;
+	padding: 0.8rem 2rem;
+	background-color: rgb(230, 224, 224);
+	border: 1px solid rgb(230, 224, 224);
+	box-shadow: 0 0 3px rgb(230, 224, 224), 0 0 5px rgb(230, 224, 224);
+	position: absolute;
+	left: 50%;
+	top: 24%;
+	text-align: center;
+	transform: translate(-50%);
+	width: 25%;
+	border-radius: 50px;
+	height: 43%;
+}
+.dialogWhenTwo {
+	display: block;
+	padding: 0.8rem 2rem;
+	background-color: rgb(230, 224, 224);
+	border: 1px solid rgb(230, 224, 224);
+	box-shadow: 0 0 3px rgb(230, 224, 224), 0 0 5px rgb(230, 224, 224);
+	position: absolute;
+	left: 50%;
+	top: 24%;
+	text-align: center;
+	transform: translate(-50%);
+	width: 25%;
+	border-radius: 50px;
+	height: 47%;
+}
+
+.message {
+	position: relative;
+	font-weight: bold;
+}
+
+li {
+	display: inline-block;
+	font-size: 23px;
+}
+
+.appleCount {
+	position: relative;
+	margin-top: 15%;
+	color: rgb(23, 19, 19);
+	font-weight: bold;
+}
+
+.yourRecord {
+	position: relative;
+	margin-top: 7%;
+	color: rgb(23, 19, 19);
+	font-weight: bold;
+}
+
+.appleCount2 {
+	position: relative;
+	margin-top: 7%;
+	color: rgb(23, 19, 19);
+	font-weight: bold;
+}
+
+.playAgainWhenOne {
+	padding: 0.8rem 2rem;
+	border: 1px solid rgb(230, 224, 224);
+	color: rgb(230, 224, 224);
+	position: absolute;
+	left: 50%;
+	bottom: 17.5%;
+	border-radius: 18px;
+	transform: translate(-50%);
+	background-color: rgb(23, 19, 19);
+}
+.playAgainWhenTwo {
+	padding: 0.8rem 2rem;
+	border: 1px solid rgb(230, 224, 224);
+	color: rgb(230, 224, 224);
+	position: absolute;
+	left: 50%;
+	bottom: 26.5%;
+	border-radius: 18px;
+	transform: translate(-50%);
+	background-color: rgb(23, 19, 19);
+}
+
+.linkToChooseGameWhenOne {
+	display: block;
+	position: absolute;
+	color: blue;
+	left: 50%;
+	bottom: 8%;
+	transform: translate(-50%);
+}
+.linkToChooseGameWhenTwo {
+	display: block;
+	position: absolute;
+	color: blue;
+	left: 50%;
+	bottom: 8%;
+	transform: translate(-50%);
+}
+
+.linkToReloadWins {
+	display: block;
+	position: absolute;
+	color: red;
+	left: 50%;
+	bottom: 17%;
+	transform: translate(-50%);
+}
+
+.linkToChooseGameWhenOne:hover,
+.linkToChooseGameWhenTwo:hover,
+.linkToReloadWins:hover {
+	cursor: pointer;
+	text-decoration: underline;
+	text-underline-position: under;
+}
+
+.playAgainWhenOne:hover,
+.playAgainWhenTwo:hover {
+	cursor: pointer;
+}

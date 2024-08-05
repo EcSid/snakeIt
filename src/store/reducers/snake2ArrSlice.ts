@@ -1,0 +1,130 @@
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { initialSnake2Cords } from '../../constants/initialSnakeCords'
+import { cellHeight, cellWidth } from '../../constants/constants'
+
+const initialState = {
+	snakeArr: [
+		[initialSnake2Cords[0], initialSnake2Cords[1] - cellHeight * 2],
+		[initialSnake2Cords[0], initialSnake2Cords[1] - cellHeight],
+		[...initialSnake2Cords],
+	],
+	direction: 'down',
+	isFreeze: false,
+	hasExtraSpeed: false,
+}
+
+export const snake2ArrSlice = createSlice({
+	name: 'snake2Arr',
+	initialState,
+	reducers: {
+		addNewRemoveFirst(
+			state,
+			action: PayloadAction<'up' | 'down' | 'left' | 'right'>
+		) {
+			const snakeArr = state.snakeArr
+			const lastElem = snakeArr[snakeArr.length - 1]
+
+			// const snakeArrWithRulesDown = snakeArr.map(el => [
+			// 	el[0],
+			// 	el[1] >= 89 - cellHeight ? el[1] - 93 : el[1],
+			// ])
+			// const lastElemDown =
+			// 	snakeArrWithRulesDown[snakeArrWithRulesDown.length - 1]
+
+			// const snakeArrWithRulesUp = snakeArr.map(el => [
+			// 	el[0],
+			// 	el[1] <= 0 + cellHeight ? 93 - Math.abs(el[1]) : el[1],
+			// ])
+			// const lastElemUp = snakeArrWithRulesUp[snakeArrWithRulesUp.length - 1]
+
+			// const snakeArrWithRulesLeft = state.snakeArr.map(el => [
+			// 	el[0] <= 0 + cellWidth ? 100 - Math.abs(el[0]) : el[0],
+			// 	el[1],
+			// ])
+			// const lastElemLeft =
+			// 	snakeArrWithRulesLeft[snakeArrWithRulesLeft.length - 1]
+
+			// const snakeArrWithRulesRight = snakeArr.map(el => [
+			// 	el[0] >= 100 - cellWidth ? el[0] - 100 : el[0],
+			// 	el[1],
+			// ])
+			// const lastElemRight =
+			// 	snakeArrWithRulesRight[snakeArrWithRulesRight.length - 1]
+
+			switch (action.payload) {
+				case 'down':
+					state.snakeArr = snakeArr
+						.slice(1)
+						.concat([[lastElem[0], lastElem[1] + cellHeight]])
+					break
+				case 'up':
+					state.snakeArr = snakeArr
+						.slice(1)
+						.concat([[lastElem[0], lastElem[1] - cellHeight]])
+					break
+				case 'left':
+					state.snakeArr = snakeArr
+						.slice(1)
+						.concat([[lastElem[0] - cellWidth, lastElem[1]]])
+					break
+				case 'right':
+					state.snakeArr = snakeArr
+						.slice(1)
+						.concat([[lastElem[0] + cellWidth, lastElem[1]]])
+					break
+			}
+		},
+		addNew(state, action: PayloadAction<'up' | 'down' | 'left' | 'right'>) {
+			const snakeArr = state.snakeArr
+			const lastElem = snakeArr[snakeArr.length - 1]
+			switch (action.payload) {
+				case 'down':
+					state.snakeArr = snakeArr.concat([[lastElem[0], lastElem[1]]])
+					break
+				case 'up':
+					state.snakeArr = snakeArr.concat([[lastElem[0], lastElem[1]]])
+					break
+				case 'left':
+					state.snakeArr = snakeArr.concat([[lastElem[0], lastElem[1]]])
+					break
+				case 'right':
+					state.snakeArr = snakeArr.concat([[lastElem[0], lastElem[1]]])
+					break
+			}
+		},
+		setDirection(
+			state,
+			action: PayloadAction<'up' | 'down' | 'left' | 'right'>
+		) {
+			return { ...state, direction: action.payload }
+		},
+		increaseWins() {
+			if (localStorage.getItem('snake2Wins')) {
+				localStorage.setItem(
+					'snake2Wins',
+					String(Number(localStorage.getItem('snake2Wins')) + 1)
+				)
+			} else {
+				localStorage.setItem('snake2Wins', '1')
+			}
+		},
+		changeFreeze(state) {
+			state.isFreeze = !state.isFreeze
+		},
+		toggleExtraSpeed(state) {
+			state.hasExtraSpeed = !state.hasExtraSpeed
+		},
+		// setDefaultSnake2ExceptWins(state) {
+		// 	return {
+		// 		snakeArr: [
+		// 			[initialSnake2Cords[0], initialSnake2Cords[1] - cellHeight * 2],
+		// 			[initialSnake2Cords[0], initialSnake2Cords[1] - cellHeight],
+		// 			[...initialSnake2Cords],
+		// 		],
+		// 		direction: 'down',
+		// 		wins: state.wins,
+		// 		isFreeze: false,
+		// 	}
+		// },
+	},
+})
